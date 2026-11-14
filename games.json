@@ -23,8 +23,8 @@
       "downloads": {
         "pc": {
           "label": "电脑版 · Windows",
-          "size": "约 110 MB",
-          "url": ""
+          "size": "47.8 MB",
+          "url": "https://github.com/78uily/games/releases/download/v0.4/Backsider_v0.4_PC.zip"
         },
         "android": {
           "label": "手机版 · Android",
@@ -38,7 +38,11 @@
         }
       },
       "changelog": [
-      { "version": "v0.4", "date": "11-14", "note": "器官技能重做" },
+        {
+          "version": "v0.4",
+          "date": "11-14",
+          "note": "器官技能重做"
+        },
         {
           "version": "v0.4",
           "date": "11-14",
@@ -53,6 +57,62 @@
           "version": "v0.4",
           "date": "11-14",
           "note": "第一版可玩原型"
+        }
+      ]
+    },
+    {
+      "id": "fps3d-orig",
+      "name": "俯视战场 3D · 原版",
+      "tag": "网页 · 3D 竞技",
+      "version": "v1.0",
+      "date": "2026-11-04",
+      "cover": "assets/fps3d.png",
+      "desc": "三页介绍站 + 一个 667 KB 的 3D 俯视竞技小游戏。交作业那一版，结构和版式都没改过。",
+      "highlights": [
+        "纯手写 HTML/CSS/JS，没有框架",
+        "3D 俯视视角，键鼠操作",
+        "整个游戏只有一个 667 KB 的文件"
+      ],
+      "downloads": {
+        "web": {
+          "label": "网页试玩 · 免安装",
+          "size": "1.6 MB",
+          "url": "games/fps3d-orig/index.html"
+        }
+      },
+      "changelog": [
+        {
+          "version": "v1.0",
+          "date": "11-04",
+          "note": "首次完成"
+        }
+      ]
+    },
+    {
+      "id": "fps3d-v2",
+      "name": "俯视战场 3D · 优化版",
+      "tag": "网页 · 版式重做",
+      "version": "v2.0",
+      "date": "2026-11-08",
+      "cover": "assets/fps3d.png",
+      "desc": "内容和结构一字未改，只重做版式：字号阶梯、卡片层次、表单状态、滚动高亮。",
+      "highlights": [
+        "同一套代码，只换视觉层",
+        "字号与间距有明确的层级",
+        "可以直接玩里面的 3D 小游戏"
+      ],
+      "downloads": {
+        "web": {
+          "label": "网页试玩 · 免安装",
+          "size": "1.5 MB",
+          "url": "games/fps3d-v2/index.html"
+        }
+      },
+      "changelog": [
+        {
+          "version": "v2.0",
+          "date": "11-08",
+          "note": "版式重做"
         }
       ]
     }

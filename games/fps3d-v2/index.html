@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>俯视战场 3D</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">俯视战场 3D</div>
+    <nav>
+      <a href="#play">玩法</a>
+      <a href="#action">动作</a>
+      <a href="#enemy">敌人</a>
+      <a href="#battlefield">战场</a>
+      <a href="#modes">模式</a>
+      <a href="#startGame">开始</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="intro">
+    <div class="wrap">
+      <h1>俯视战场</h1>
+      <p>三分钟一局，巨爽巨解压。180 秒，看谁活到最后。</p>
+      <a class="btn" href="#play">查看玩法</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="row" id="play">
+      <div>
+        <h2>玩法</h2>
+        <p>每一局 180 秒。每 30 秒暂停一次，给你三张强化牌，选完接着打。</p>
+        <p>强化分三档：基础紫、联动青、质变金。第 90 秒和 150 秒各刷一波 BOSS。</p>
+      </div>
+      <img src="assets/images/upgrade.jpg" alt="强化三选一">
+    </section>
+
+    <section id="action">
+      <h2>动作</h2>
+      <p>移动用 WASD，剩下的只有跳、砸、和自动开火。</p>
+      <div class="cards">
+        <div class="card"><h3>蓄力跳</h3><p>按住空格蓄力，0.65 秒满力。</p></div>
+        <div class="card"><h3>砸地</h3><p>落地冲击环，伤害 ×2.2。</p></div>
+        <div class="card"><h3>自动开火</h3><p>锁定 14 米内最近的敌人。</p></div>
+      </div>
+    </section>
+
+    <section class="row" id="enemy">
+      <div>
+        <h2>敌人</h2>
+        <p>颜色就是行为：红冲、金肉、紫远程。</p>
+        <ul>
+          <li><b>六棱台 · 红</b> 直冲，逼你起跳。</li>
+          <li><b>八面体 · 金</b> 慢肉，血厚撞得疼。</li>
+          <li><b>四面体 · 紫</b> 远程，靠太近会后退。</li>
+        </ul>
+      </div>
+      <img src="assets/images/enemy.png" alt="红怪围上来">
+    </section>
+
+    <section id="battlefield">
+      <h2>战场</h2>
+      <p>相机固定 55.6° 俯角，只跟人平移，不旋转、不缩放。场地是半径 17 米的六边形。</p>
+      <img src="assets/images/battlefield.png" alt="BOSS 战">
+    </section>
+
+    <section id="modes">
+      <h2>模式</h2>
+      <div class="cards">
+        <div class="card"><h3>经典</h3><p>180 秒生存，死了重来。</p></div>
+        <div class="card"><h3>分区远征</h3><p>4 区 16 关，纯选关。</p></div>
+        <div class="card"><h3>故事</h3><p>5 章，有存档和选章。</p></div>
+      </div>
+    </section>
+
+    <section id="startGame">
+      <div class="wrap">
+        <h2>开始游戏</h2>
+        <p>账号密码不要随便填。未成年只提示一句，照样能进。</p>
+        <form id="gate">
+          <input id="user" placeholder="请输入账号">
+          <input id="pass" type="password" placeholder="请输入密码">
+          <input id="name" placeholder="请输入姓名">
+          <input id="id" maxlength="18" placeholder="请输入身份证号">
+          <button class="btn" type="submit">验证信息</button>
+          <p id="msg"></p>
+          <a id="playLink" href="assets/play/moba3d.html" target="_blank" rel="noopener">进入游戏 →</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>游戏截图来自自创游戏</footer>
+
+  <nav class="bottom-nav">
+    <a href="#startGame">开始游戏</a>
+    <a href="about.html">我的 3D 世界</a>
+    <a href="#">↑ 返回顶部</a>
+  </nav>
+  <div class="bottom-space"></div>
+
+  <script>
+    var gate = document.getElementById('gate');
+    var msg = document.getElementById('msg');
+    var playLink = document.getElementById('playLink');
+
+    gate.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var user = document.getElementById('user').value;
+      var pass = document.getElementById('pass').value;
+      var name = document.getElementById('name').value;
+      var id = document.getElementById('id').value;
+
+      playLink.style.display = 'none';
+      msg.textContent = '';
+
+      if (!user || !pass) { msg.textContent = '请输入账号和密码'; return; }
+      if (!name) { msg.textContent = '请输入姓名'; return; }
+      if (id.length < 14) { msg.textContent = '身份证号太短'; return; }
+
+      var year = Number(id.slice(6, 10));
+      if (!year) { msg.textContent = '第 7–14 位应该是出生日期'; return; }
+
+      var age = new Date().getFullYear() - year;
+      msg.textContent = age < 18 ? '未成年只能玩一小时。' : '验证通过，可以进入游戏。';
+      playLink.style.display = 'block';
+    });
+  </script>
+
+  <script>
+    /* 版式增强：只动表现，不改文案与结构 */
+    (function () {
+      var motion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var header = document.querySelector('header');
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll('header nav a'));
+      var blocks = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
+      var msg = document.getElementById('msg');
+
+      function onScroll() {
+        header.classList.toggle('scrolled', window.scrollY > 8);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      if ('IntersectionObserver' in window) {
+        var navIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var hash = '#' + entry.target.id;
+            navLinks.forEach(function (a) {
+              a.classList.toggle('on', a.getAttribute('href') === hash);
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        blocks.forEach(function (el) { navIo.observe(el); });
+
+        if (!motion) {
+          var fadeIo = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('in');
+              fadeIo.unobserve(entry.target);
+            });
+          }, { threshold: 0.12 });
+          blocks.forEach(function (el) {
+            el.classList.add('reveal');
+            fadeIo.observe(el);
+          });
+
+          /* 兜底：3 秒后无论 IO 有没有触发都显示，避免内容永久隐藏 */
+          setTimeout(function () {
+            blocks.forEach(function (el) { el.classList.add('in'); });
+          }, 3000);
+        }
+      }
+
+      if (msg) {
+        var watch = new MutationObserver(function () {
+          var text = msg.textContent.trim();
+          msg.classList.toggle('ok', text.indexOf('验证通过') > -1);
+          msg.classList.toggle('err', text.length > 0 && text.indexOf('验证通过') === -1);
+        });
+        watch.observe(msg, { childList: true, characterData: true, subtree: true });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的 3D 游戏世界</title>
+  <style>
+    :root {
+      --bg: #0a0713;
+      --line: #2a2438;
+      --line-soft: rgba(127, 215, 255, .16);
+      --ink: #ece7f6;
+      --muted: #a59bc4;
+      --cyan: #7fd7ff;
+      --font: "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:
+        radial-gradient(900px 460px at 50% -10%, rgba(127, 215, 255, .07), transparent 70%),
+        linear-gradient(180deg, var(--bg) 0%, #0e0a1b 60%, var(--bg) 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font: 16px/1.95 var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+      transition: color .25s;
+    }
+    .wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      background: rgba(10, 7, 19, .86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .logo {
+      font-size: 15px;
+      letter-spacing: .14em;
+      color: var(--ink);
+    }
+    .logo::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 9px;
+      border: 1px solid var(--cyan);
+      transform: rotate(45deg) translateY(-1px);
+      vertical-align: middle;
+      opacity: .85;
+    }
+    nav a {
+      margin-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: .04em;
+    }
+    nav a:hover {
+      color: var(--cyan);
+    }
+    main {
+      padding: 72px 0 90px;
+    }
+    h1 {
+      font-size: 52px;
+      font-weight: 300;
+      letter-spacing: .04em;
+      line-height: 1.2;
+      color: #fdfbff;
+      text-shadow: 0 0 40px rgba(127, 215, 255, .22);
+    }
+    main > p:first-of-type {
+      margin-top: 18px;
+      max-width: 60ch;
+      color: #cbc3e0;
+    }
+    h2 {
+      position: relative;
+      margin: 44px 0 10px;
+      padding-left: 14px;
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: .06em;
+      color: var(--ink);
+    }
+    h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .28em;
+      width: 3px;
+      height: .9em;
+      background: linear-gradient(180deg, var(--cyan), transparent);
+      border-radius: 2px;
+    }
+    p, li {
+      color: var(--muted);
+      max-width: 62ch;
+    }
+    ul {
+      padding-left: 22px;
+      margin-top: 8px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+    main > p:last-of-type {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    main > p:last-of-type a {
+      letter-spacing: .04em;
+    }
+    footer {
+      padding: 28px 20px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      color: #7a7099;
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 19px;
+      }
+      main {
+        padding: 52px 0 70px;
+      }
+      header {
+        padding: 12px 16px;
+      }
+      nav a {
+        margin-left: 12px;
+        font-size: 13px;
+      }
+    }
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">俯视战场 3D</div>
+    <nav>
+      <a href="index.html">返回介绍</a>
+      <a href="index.html#startGame">开始游戏</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1>我的 3D 游戏世界</h1>
+    <p>这个 3D 游戏是我自己一点点搭起来的。最早只想做一个能跑的小场景，后来慢慢加了 180 秒的循环、三种几何敌人和两个 BOSS。</p>
+
+    <h2>为什么做 3D</h2>
+    <p>相机固定在 55.6° 俯角，不旋转也不缩放。一方面我自己玩 3D 会晕，另一方面固定视角让走位和距离更好判断。</p>
+
+    <h2>怎么做的</h2>
+    <p>一局 180 秒，每 30 秒暂停一次给三张强化牌；第 90 秒和 150 秒各刷一波 BOSS。敌人只有三种几何体，靠颜色和形状区分行为。</p>
+
+    <h2>做过的东西</h2>
+    <ul>
+      <li>180 秒一局的完整循环</li>
+      <li>红、金、紫三种几何敌人</li>
+      <li>两个 BOSS 和 5 次三选一</li>
+      <li>反弹墙、黑洞、实体尸体、极限闪避</li>
+      <li>经典、分区远征、故事三种模式</li>
+    </ul>
+
+    <h2>现在</h2>
+    <p>现在它还不大，但 180 秒一局、死了重开的节奏已经跑通了。下一步想把故事模式和更多玩具补完。</p>
+
+    <p><a href="index.html">← 返回游戏介绍</a></p>
+  </main>
+
+  <footer>游戏截图来自自创游戏</footer>
+</body>
+</html>
