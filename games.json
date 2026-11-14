@@ -28,8 +28,8 @@
         },
         "android": {
           "label": "手机版 · Android",
-          "size": "约 70 MB（待出）",
-          "url": ""
+          "size": "81.9 MB",
+          "url": "https://github.com/78uily/games/releases/download/v0.4/Backsider_v0.4_Android.apk"
         },
         "web": {
           "label": "网页试玩 · 免安装",
