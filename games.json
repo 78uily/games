@@ -10,7 +10,7 @@
       "id": "backsider",
       "name": "背对者",
       "tag": "3D 动作 · 克苏鲁 · 拆解",
-      "version": "v0.4",
+      "version": "v0.5",
       "date": "2026-11-14",
       "cover": "assets/backsider.png",
       "desc": "你从管道里掉进了不该存在的地下层。这里的东西可以被拆开——怪物的腿、背上的门缝、体内的毒囊。拆下来的零件能装到自己身上，代价是你会越来越像一扇门。",
@@ -38,23 +38,24 @@
         }
       },
       "changelog": [
+      { "version": "v0.5", "date": "11-14", "note": "终端测试" },
         {
-          "version": "v0.4",
+          "version": "v0.5",
           "date": "11-14",
           "note": "器官技能重做"
         },
         {
-          "version": "v0.4",
+          "version": "v0.5",
           "date": "11-14",
           "note": "三章流程打通、12 间房、19 种怪、5 把武器、Boss 三阶段、音效与四条结局"
         },
         {
-          "version": "v0.4",
+          "version": "v0.5",
           "date": "11-14",
           "note": "从 3D 重开：背后视角、三段连段、部位破坏"
         },
         {
-          "version": "v0.4",
+          "version": "v0.5",
           "date": "11-14",
           "note": "第一版可玩原型"
         }
@@ -64,7 +65,7 @@
       "id": "fps3d-orig",
       "name": "俯视战场 3D · 原版",
       "tag": "网页 · 3D 竞技",
-      "version": "v1.0",
+      "version": "v0.5",
       "date": "2026-11-04",
       "cover": "assets/fps3d.png",
       "desc": "三页介绍站 + 一个 667 KB 的 3D 俯视竞技小游戏。交作业那一版，结构和版式都没改过。",
@@ -81,9 +82,10 @@
         }
       },
       "changelog": [
+      { "version": "v0.5", "date": "11-14", "note": "终端测试" },
         {
-          "version": "v1.0",
-          "date": "11-04",
+          "version": "v0.5",
+          "date": "11-14",
           "note": "首次完成"
         }
       ]
@@ -92,7 +94,7 @@
       "id": "fps3d-v2",
       "name": "俯视战场 3D · 优化版",
       "tag": "网页 · 版式重做",
-      "version": "v2.0",
+      "version": "v0.5",
       "date": "2026-11-08",
       "cover": "assets/fps3d.png",
       "desc": "内容和结构一字未改，只重做版式：字号阶梯、卡片层次、表单状态、滚动高亮。",
@@ -109,9 +111,10 @@
         }
       },
       "changelog": [
+      { "version": "v0.5", "date": "11-14", "note": "终端测试" },
         {
-          "version": "v2.0",
-          "date": "11-08",
+          "version": "v0.5",
+          "date": "11-14",
           "note": "版式重做"
         }
       ]
