@@ -38,7 +38,7 @@ window.SITE_DATA = {
         }
       },
       "changelog": [
-      { "version": "v0.5", "date": "11-14", "note": "终端测试" },
+      { "version": "v0.5", "date": "11-14", "note": "手机版 APK 上线（81.9 MB）" },
         {
           "version": "v0.5",
           "date": "11-14",
@@ -82,7 +82,7 @@ window.SITE_DATA = {
         }
       },
       "changelog": [
-      { "version": "v0.5", "date": "11-14", "note": "终端测试" },
+      { "version": "v0.5", "date": "11-14", "note": "手机版 APK 上线（81.9 MB）" },
         {
           "version": "v0.5",
           "date": "11-14",
@@ -111,7 +111,7 @@ window.SITE_DATA = {
         }
       },
       "changelog": [
-      { "version": "v0.5", "date": "11-14", "note": "终端测试" },
+      { "version": "v0.5", "date": "11-14", "note": "手机版 APK 上线（81.9 MB）" },
         {
           "version": "v0.5",
           "date": "11-14",
