@@ -1,0 +1,101 @@
+:root {
+  --bg: #0b0d12;
+  --panel: #141821;
+  --panel2: #1b2130;
+  --line: #2a3244;
+  --text: #e8ecf4;
+  --dim: #8d97aa;
+  --gold: #e8c460;
+  --red: #e2604e;
+  --green: #5fd08a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 50% -200px, #1a2030 0%, transparent 70%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+.hero { padding: 64px 0 32px; border-bottom: 1px solid var(--line); }
+
+.hero h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 6px;
+  font-weight: 700;
+}
+
+.hero .tag { color: var(--gold); margin: 8px 0 4px; letter-spacing: 2px; }
+.hero .desc { color: var(--dim); margin: 0; }
+
+main { padding: 32px 0 64px; }
+
+.game {
+  background: linear-gradient(180deg, var(--panel) 0%, var(--panel2) 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 28px;
+}
+
+.game-head { display: flex; gap: 18px; align-items: flex-start; }
+
+.cover {
+  width: 96px; height: 96px; border-radius: 12px;
+  background: #0d1017 center/cover no-repeat;
+  border: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+
+.titles h2 { margin: 0 0 4px; font-size: 24px; letter-spacing: 2px; }
+.titles .meta { color: var(--dim); font-size: 13px; }
+.titles .meta b { color: var(--gold); font-weight: 600; }
+
+.desc { color: #c3cbda; margin: 16px 0 14px; }
+
+ul.highlights { margin: 0 0 18px; padding-left: 20px; color: var(--dim); }
+ul.highlights li { margin: 4px 0; }
+
+.downloads { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.dl {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: #10151f;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+  min-width: 200px;
+  transition: border-color .15s, transform .15s;
+}
+.dl:hover { border-color: var(--gold); transform: translateY(-1px); }
+.dl .k { font-size: 15px; }
+.dl .s { display: block; color: var(--dim); font-size: 12px; margin-top: 2px; }
+.dl.off { opacity: .45; pointer-events: none; }
+.dl.off .k::after { content: " · 还没做好"; color: var(--red); font-size: 12px; }
+
+.log-title {
+  margin: 22px 0 8px; font-size: 13px; color: var(--dim);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.log { border-left: 2px solid var(--line); padding-left: 14px; }
+.log div { font-size: 13px; color: var(--dim); margin: 4px 0; }
+.log b { color: var(--green); font-weight: 600; margin-right: 8px; }
+
+footer { padding: 28px 0 60px; color: var(--dim); font-size: 13px; border-top: 1px solid var(--line); }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; letter-spacing: 3px; }
+  .game-head { flex-direction: column; }
+  .cover { width: 72px; height: 72px; }
+  .dl { min-width: 100%; }
+}
